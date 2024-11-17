@@ -1,0 +1,55 @@
+.admin-home{
+    background-color: rgb(241, 241, 127);
+}
+
+.admin-container {
+    position: relative; /* Keeps the form in front of the background */
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    height: 100vh; /* Full height of the viewport */
+}
+
+.admin {
+    background-color: rgba(0, 0, 0); /* Semi-transparent background for the form */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Limit the width of the form */
+    text-align: center;
+    padding: 50px;
+}
+
+.admin input {
+    width: 85%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.admin button {
+    padding: 12px;
+    background-color: rgb(239, 7, 7);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 65%;
+    font-size: large;
+}
+
+.admin button:hover {
+    background-color:rgb(197, 82, 82);
+}
+
+.admin a button{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.admin h1{
+    color: wheat;
+    font-weight: bolder;
+}
+
+.admin h1:hover{
+    transform: scale(1.1);
+}
