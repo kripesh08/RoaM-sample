@@ -1,5 +1,5 @@
 import "./Login.css";
-import { Link } from 'react-router-dom';
+
 
 const Login = () => {
     return(
@@ -8,13 +8,11 @@ const Login = () => {
             <form>
                 <div className="login-container">
                     <div className="login">
-                        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"/>
+                        <input type="tel" pattern="^\d{10}$" placeholder="Contact No"/>
                         <br /><br />
                         <input type="password" placeholder="Password"/>
-                        <p>Don't have an account?<Link to="/User/Signup"> Sign up</Link></p>
-                        <Link to="">
-                            <button className="button" type="button">Login</button>
-                        </Link>
+                        <p>Don't have an account?<a href="/User/Signup"> Sign up</a></p>
+                        <button className="button" type="button">Login</button>
                     </div>
                 </div>
             </form>

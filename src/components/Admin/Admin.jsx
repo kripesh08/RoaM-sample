@@ -1,5 +1,4 @@
 import "./Admin.css";
-import { Link } from 'react-router-dom';
 
 const Admin = () => {
     return(
@@ -8,13 +7,11 @@ const Admin = () => {
                 <div className="admin-container">
                     <div className="admin">
                         <h1>Admin Login</h1>
-                        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"/>
+                        <input type="tel" pattern="^\d{10}$" placeholder="Contact No"/>
                         <br /><br />
                         <input type="password" placeholder="Password"/>
                         <br /><br />
-                        <Link to="">
                             <button className="button" type="button">Login</button>
-                        </Link>
                     </div>
                 </div>
             </form>

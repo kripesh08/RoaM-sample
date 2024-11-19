@@ -19,13 +19,13 @@
     width: 100%;
     max-width: 400px; /* Limit the width of the form */
     text-align: center;
-    padding: 20px;
+    padding: 22px 12px;
 }
 
 .signup input,textarea {
     border: 0.5px solid black;
     width: 65%;
-    padding: 5px;
+    padding: 8px;
     border-radius: 4px;
 }
 

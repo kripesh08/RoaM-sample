@@ -25,6 +25,7 @@
 .login input {
     width: 85%;
     padding: 10px;
+    border: 0.5px solid black;
     border-radius: 4px;
 }
 
@@ -45,15 +46,11 @@
     cursor: pointer;
     width: 65%;
     font-size: large;
+    color: white;
+    font-weight: bold;
 }
 
 .login button:hover {
     background-color: #45a049;
-}
-
-.login a button{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
 }
 
