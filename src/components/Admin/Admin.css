@@ -21,15 +21,15 @@
 }
 
 .admin input {
-    width: 85%;
-    padding: 16px;
+    width: 95%;
+    padding: 10px;
     border-radius: 6px;
     border: 0;
     font-size: larger;
 }
 
 .admin button {
-    padding: 10px;
+    padding:8px;
     background-color: rgb(239, 7, 7);
     border: none;
     border-radius: 4px;
@@ -50,8 +50,8 @@
 }
 
 .admin h1{
-    color: rgb(205, 207, 213);
+    color: rgb(233, 234, 239);
     font-weight: bolder;
-    margin-top: 0;
+    text-shadow: 2px 2px 5px rgb(255, 0, 0);
 }
 

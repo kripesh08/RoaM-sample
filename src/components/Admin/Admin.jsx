@@ -7,10 +7,11 @@ const Admin = () => {
                 <div className="admin-container">
                     <div className="admin">
                         <h1>Admin Login</h1>
+                        <br />
                         <input type="tel" pattern="^\d{10}$" placeholder="Contact No"/>
-                        <br /><br />
+                        <br />
                         <input type="password" placeholder="Password"/>
-                        <br /><br />
+                        <br />
                             <button className="button" type="button">Login</button>
                     </div>
                 </div>

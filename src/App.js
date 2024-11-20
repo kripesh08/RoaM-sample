@@ -19,7 +19,7 @@ function App() {
         <Route path="/User/UserDash" element={<UserDash />} />  {/* User Dashboard route */}
         
         {/* Admin route */}
-        <Route path="/Admin" element={<Admin />} /> {/* Admin route */}
+        <Route path="/Admin/Admin" element={<Admin />} /> {/* Admin route */}
       </Routes>
     </BrowserRouter>
   );

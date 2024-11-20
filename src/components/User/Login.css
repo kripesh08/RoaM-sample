@@ -19,7 +19,7 @@
     width: 100%;
     max-width: 400px; /* Limit the width of the form */
     text-align: center;
-    padding: 50px;
+    padding: 30px 20px;
 }
 
 .login input {
@@ -39,12 +39,12 @@
 }
 
 .login button {
-    padding: 12px;
+    padding: 10px 5px;
     background-color: #4CAF50;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 65%;
+    width: 55%;
     font-size: large;
     color: white;
     font-weight: bold;
@@ -54,3 +54,7 @@
     background-color: #45a049;
 }
 
+.login h1 {
+    color: white;
+    text-shadow: 2px 2px 5px black; /* Added vertical offset and blur radius for a smoother shadow */
+}
