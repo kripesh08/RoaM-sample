@@ -63,7 +63,7 @@ body {
 .user-info {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
 }
 
 .user-info div {
@@ -111,4 +111,42 @@ textarea {
   .edit-btn:hover {
     background-color: #2980b9;
   }
-  
+
+
+
+
+
+.user-trips{
+    display: flex;
+    gap: 40px;
+}
+
+.mytrip-container{
+    border: 1px solid black;
+    width: 40vb;
+    height: 40vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.mytrip-container h3{
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.mytrip-container button{
+    color: white;
+    font-weight: bold;
+    background-color: #2980b9;
+    padding: 8px;
+    border: 0;
+}
+
+.mytrip-container button:hover{
+    background-color:#dd8b82;
+    cursor: pointer;
+}

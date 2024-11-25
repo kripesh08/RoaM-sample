@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import "./UserDash.css";
+import Modal from "./Modal";
 
 const UserDash = () => {
     // State to manage readOnly property for each field
     const [isEditable, setIsEditable] = useState(false);
 
+    // State to control modal visibility
+    const [showModal, setShowModal] = useState(false);
+
     // Function to toggle between edit and save
     const handleEditClick = () => {
         setIsEditable(!isEditable); // Toggle the edit mode
+    };
+
+    // Function to handle showing and hiding the modal
+    const handleViewClick = () => {
+        setShowModal(true); // Show the modal
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false); // Close the modal
     };
 
     return (
@@ -93,15 +106,24 @@ const UserDash = () => {
             <div className="user-dashboard">
                 <h2>My trips</h2>
                 <br />
-                <div className="user-info">
-                    <div>
-                        {/* You can display user trips here */}
+                <div className="user-trips">
+                    
+                    <div className="mytrip-container">
+                        <h3>District</h3>
+                        <p>Total expense: </p>
+                        <p>Total locations: </p>
+                        <p>Booked date: </p>
+                        <button type="button" onClick={handleViewClick}>Track Expense</button>
                     </div>
-                    <div>
-                        {/* Display any other relevant content */}
-                    </div>
+                    
                 </div>
             </div>
+
+            <Modal
+                showModal={showModal}
+                onClose={handleCloseModal}
+            />
+
         </div>
     );
 };
