@@ -18,9 +18,9 @@ const AdminDash = () => {
     };
 
     return (
-        <div className="home-page-admin">
-            <div className="heading-admin">
-                <div className="title">
+        <div className="dash-page-admin">
+            <div className="header-admin">
+                <div className="header-title">
                     <h2>RoaM</h2>
                 </div>
                 <div className="hiadmin">

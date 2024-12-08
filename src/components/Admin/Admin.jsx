@@ -2,7 +2,7 @@ import "./Admin.css";
 
 const Admin = () => {
     return(
-        <div className="admin-home">
+        <div className="admin-login">
             <form>
                 <div className="admin-container">
                     <div className="admin">

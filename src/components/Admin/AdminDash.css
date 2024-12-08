@@ -1,7 +1,5 @@
-.heading-admin {
+.header-admin {
     background-color: black;
-    color: white;
-    margin: 0;
     width: 100%;
     height: 11vh;
     display: flex;
@@ -10,26 +8,26 @@
     padding: 0px 40px;
 }
 
-.heading-admin h2 {
+.header-admin h2 {
     font-size: xx-large;
     font-weight: bold;
+    color: white; 
 }
 
-.hiadmin p{
+.hiadmin p {
     font-size: large;
     font-weight: normal;
+    color: white; 
 }
 
-/* Styling for the content section */
 .admindash-content {
     display: flex;
-    height: calc(100vh - 11vh); /* Corrected height */
+    height: calc(100vh - 11vh); 
 }
 
-/* Left section styling */
 .left-admindash {
     width: 20%;
-    background-color: maroon; /* A darker shade for the left panel */
+    background-color: rgb(159, 21, 21); 
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -53,10 +51,9 @@
     background-color: white;
 }
 
-/* Right section styling */
 .right-admindash {
     width: 80%;
-    background-color: #f4f4f4; /* A light background for contrast */
+    background-color: #f4f4f4; 
     padding: 20px;
     box-sizing: border-box;
 }
