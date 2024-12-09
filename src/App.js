@@ -11,6 +11,7 @@ import AdminHome from './components/Admin/AdminHome';
 import AdminLocation from './components/Admin/AdminLocation';
 import AdminTrips from './components/Admin/AdminTrips';
 import AdminUsers from './components/Admin/AdminUsers';
+import UserTrips from './components/Admin/UserTrips';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
         <Route path="/Admin/AdminLocation" element={<AdminLocation />} />
         <Route path="/Admin/AdminTrips" element={<AdminTrips />} />
         <Route path="/Admin/AdminUsers" element={<AdminUsers />} />
+        <Route path="/Admin/UserTrips/:userId" element={<UserTrips />} />
+        
 
       </Routes>
     </BrowserRouter>

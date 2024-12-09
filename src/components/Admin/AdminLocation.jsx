@@ -8,6 +8,7 @@ const AdminLocation = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [states, setStates] = useState([]);
   const [districts, setDistricts] = useState([]);
+  const [filters, setFilters] = useState({ state: '', district: '' });
   const [formData, setFormData] = useState({
     place: '',
     state: '',
@@ -25,8 +26,8 @@ const AdminLocation = () => {
 
   const fetchLocations = () => {
     setLocations([
-      { id: 1, place: 'Place A', state: 'State 1', district: 'District 1', travelRate: 100, foodRate: 50, ticketRate: 30, duration: '3 days' },
-      { id: 2, place: 'Place B', state: 'State 2', district: 'District 2', travelRate: 120, foodRate: 60, ticketRate: 40, duration: '4 days' },
+      { id: 1, place: 'Place A', state: 'State 1', district: 'District 1', travelRate: 100, foodRate: 50, ticketRate: 30, duration: '3 days', active: true },
+      { id: 2, place: 'Place B', state: 'State 2', district: 'District 3', travelRate: 120, foodRate: 60, ticketRate: 40, duration: '4 days', active: false },
     ]);
   };
 
@@ -40,9 +41,13 @@ const AdminLocation = () => {
     if (state === 'State 3') setDistricts(['District 5', 'District 6']);
   };
 
-  const handleStateChange = (state) => {
-    setFormData({ ...formData, state });
+  const handleStateFilterChange = (state) => {
+    setFilters({ state, district: '' });
     fetchDistricts(state);
+  };
+
+  const handleDistrictFilterChange = (district) => {
+    setFilters({ ...filters, district });
   };
 
   const handleInputChange = (e) => {
@@ -62,6 +67,7 @@ const AdminLocation = () => {
       ticketRate: location ? location.ticketRate : '',
       duration: location ? location.duration : '',
     });
+    if (location) fetchDistricts(location.state);
     setIsModalOpen(true);
   };
 
@@ -75,9 +81,19 @@ const AdminLocation = () => {
     setIsModalOpen(false);
   };
 
-  const handleDelete = (id) => {
-    setLocations(locations.filter(location => location.id !== id));
+  const handleToggleActive = (id) => {
+    setLocations(
+      locations.map((location) =>
+        location.id === id ? { ...location, active: !location.active } : location
+      )
+    );
   };
+
+  const filteredLocations = locations.filter((location) => {
+    const matchesState = !filters.state || location.state === filters.state;
+    const matchesDistrict = !filters.district || location.district === filters.district;
+    return matchesState && matchesDistrict;
+  });
 
   return (
     <div className="admin-location">
@@ -86,32 +102,30 @@ const AdminLocation = () => {
         <button className="plus-btn" onClick={() => openModal()}>+</button>
       </div>
 
-      <div className="filter-section">
+      <div className="filters">
         <select
-          value={formData.state}
-          onChange={(e) => handleStateChange(e.target.value)}
+          value={filters.state}
+          onChange={(e) => handleStateFilterChange(e.target.value)}
         >
-          <option value="">Select State</option>
+          <option value="">All States</option>
           {states.map((state, index) => (
             <option key={index} value={state}>
               {state}
             </option>
           ))}
         </select>
-        {formData.state && (
-          <select
-            value={formData.district}
-            onChange={handleInputChange}
-            name="district"
-          >
-            <option value="">Select District</option>
-            {districts.map((district, index) => (
-              <option key={index} value={district}>
-                {district}
-              </option>
-            ))}
-          </select>
-        )}
+        <select
+          value={filters.district}
+          onChange={(e) => handleDistrictFilterChange(e.target.value)}
+          disabled={!filters.state}
+        >
+          <option value="">All Districts</option>
+          {districts.map((district, index) => (
+            <option key={index} value={district}>
+              {district}
+            </option>
+          ))}
+        </select>
       </div>
 
       <table className="location-table">
@@ -128,8 +142,11 @@ const AdminLocation = () => {
           </tr>
         </thead>
         <tbody>
-          {locations.map((location) => (
-            <tr key={location.id}>
+          {filteredLocations.map((location) => (
+            <tr
+              key={location.id}
+              className={!location.active ? 'inactive' : ''}
+            >
               <td>{location.place}</td>
               <td>{location.state}</td>
               <td>{location.district}</td>
@@ -138,10 +155,10 @@ const AdminLocation = () => {
               <td>{location.ticketRate}</td>
               <td>{location.duration}</td>
               <td>
-                <div className="button-group">
-                  <button onClick={() => openModal(location)}>Edit</button>
-                  <button onClick={() => handleDelete(location.id)}>Delete</button>
-                </div>
+                <button onClick={() => openModal(location)}>Edit</button>
+                <button onClick={() => handleToggleActive(location.id)}>
+                  {location.active ? 'Inactive' : 'Active'}
+                </button>
               </td>
             </tr>
           ))}
@@ -170,7 +187,10 @@ const AdminLocation = () => {
                   <select
                     name="state"
                     value={formData.state}
-                    onChange={(e) => handleStateChange(e.target.value)}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                      fetchDistricts(e.target.value);
+                    }}
                     required
                   >
                     <option value="">Select State</option>

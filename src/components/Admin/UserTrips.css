@@ -1,0 +1,85 @@
+.user-trips-container {
+    padding: 30px;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.back-btn {
+    background-color: maroon;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.back-btn:hover {
+    background-color: black;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 60px;
+    color: #333;
+    margin-bottom: 30px;  /* Added spacing below h3 */
+}
+
+.trip-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+th {
+    background-color: #f4f6f9;
+    color: #666;
+}
+
+.trip-table th, .cost-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.cost-table th, .cost-table td {
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.guide-box {
+    background-color: #eff2f7;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+}
